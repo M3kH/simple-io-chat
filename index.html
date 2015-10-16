@@ -1,0 +1,159 @@
+
+<html>
+<head>
+  <title>Simple Chat</title>
+  <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css" />
+  <style media="screen">
+    .valign-wrapper{
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+    .valign-wrapper .valign{
+      margin: 0 auto;
+    }
+
+    .chat{
+      width: 90%;
+      height: 100%;
+      position: relative;
+    }
+
+    .box-chat, .box-users{
+      overflow-y: scroll;
+      margin-bottom: 50px;
+      height: calc(100% - 50px);
+    }
+
+    .box-mesage{
+      bottom: 0;
+      margin: 0;
+      width: 100%;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login -->
+  <div class="login valign-wrapper">
+    <div class="valign center-align">
+        <div class="input-field">
+          <input type="text" placeholder="Username" id="username" class="validate">
+          <label for="username">Insert a username</label>
+          <button class="btn waves-effect waves-light hide" id="connect">Connect</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- Chat -->
+  <div class="chat container hide">
+
+    <div class="row">
+      <!-- Messages -->
+      <div class="box-chat col s9">
+        <ul></ul>
+      </div>
+
+      <!-- Users  -->
+      <div class="box-users s3">
+        <ul></ul>
+      </div>
+    </div>
+
+    <div class="row box-mesage">
+      <div class="col s11">
+        <input type="text" id="message">
+      </div>
+      <div class="col s1">
+        <button class="btn waves-effect waves light" id="send-message">Send</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Loader -->
+  <div class="loader valign-wrapper hide">
+    <div class="loading valign ">
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-red">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-yellow">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-green">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="node_modules/babel-core/browser.js"></script>
+  <script type="text/javascript" src="node_modules/babel-core/browser-polyfill.js"></script>
+  <script type="text/javascript" src="bower_components/system.js/dist/system.js"></script>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.js"></script>
+  <script>
+      System.config({
+        transpiler: 'babel',
+        babelOptions: {
+        },
+        defaultJSExtensions: true,
+        paths: {
+          'jquery': 'bower_components/jquery/dist/jquery.min',
+          'socket.io': 'node_modules/socket.io-client/socket.io',
+          'underscore': 'node_modules/underscore/underscore',
+          'child_process': 'src/utils/fake_child_process'
+        },
+        meta: {
+          'materialize': {
+            deps: ['jQuery']
+          }
+        }
+      });
+
+      // load index.js
+      System.import('index');
+  </script>
+
+</body>
+</html>

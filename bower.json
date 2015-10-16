@@ -1,0 +1,29 @@
+{
+  "name": "simple-chat",
+  "main": "index.js",
+  "version": "1.0.0",
+  "authors": [
+    "Mauro <mauro@insided.nl>"
+  ],
+  "description": "Tick Tack Toe",
+  "keywords": [
+    "tick",
+    "tack",
+    "toe",
+    "game"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "~0.97.1",
+    "system.js": "~0.19.4",
+    "jquery": "~2.1.4"
+  }
+}
